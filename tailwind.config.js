@@ -15,6 +15,16 @@ module.exports = {
       colors: {
         'gpt-gray': '#343541',
         'gpt-lightgray': '#40414F',
+        'gpt-ai-color': '#19C37D',
+      },
+      keyframes: {
+        blink: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
+      animation: {
+        blink: 'blink 1s infinite',
       },
     },
   },

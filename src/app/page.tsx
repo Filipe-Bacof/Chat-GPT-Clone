@@ -6,6 +6,7 @@ import { Header } from '@/components/Header'
 import { Sidebar } from '@/components/Sidebar'
 import { Chat } from '@/types/Chat'
 import { useEffect, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 const Page = () => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
@@ -18,6 +19,10 @@ const Page = () => {
     setChatActive(chatList.find((item) => item.id === chatActiveId))
   }, [chatActiveId, chatList])
 
+  useEffect(() => {
+    if (AILoading) getAIResponse()
+  }, [AILoading])
+
   const openSidebar = () => {
     setSidebarOpened(true)
   }
@@ -25,11 +30,66 @@ const Page = () => {
     setSidebarOpened(false)
   }
 
-  const handleClearConversations = () => {}
+  const getAIResponse = () => {
+    // requisição para a API do CHAT GPT
+    setTimeout(() => {
+      const chatListClone = [...chatList]
+      const chatIndex = chatListClone.findIndex(
+        (item) => item.id === chatActiveId,
+      )
+      if (chatIndex > -1) {
+        chatListClone[chatIndex].messages.push({
+          id: uuidv4(),
+          author: 'ai',
+          body: 'resposta da API do CHAT GPT',
+        })
+      }
+      setChatList(chatListClone)
+      setAILoading(false)
+    }, 2000)
+  }
 
-  const handleNewChat = () => {}
+  const handleClearConversations = () => {
+    if (AILoading) return
+    setChatActiveId('')
+    setChatList([])
+  }
 
-  const handleSendMessage = () => {}
+  const handleNewChat = () => {
+    if (AILoading) return
+    setChatActiveId('')
+    closeSidebar()
+  }
+
+  const handleSendMessage = (message: string) => {
+    if (!chatActiveId) {
+      // Create new chat
+      const newChatId = uuidv4()
+      setChatList([
+        {
+          id: newChatId,
+          title: message,
+          messages: [{ id: uuidv4(), author: 'me', body: message }],
+        },
+        ...chatList,
+      ])
+      setChatActiveId(newChatId)
+    } else {
+      // Updating existing chat
+      const chatListClone = [...chatList]
+      const chatIndex = chatListClone.findIndex(
+        (item) => item.id === chatActiveId,
+      )
+      chatListClone[chatIndex].messages.push({
+        id: uuidv4(),
+        author: 'me',
+        body: message,
+      })
+      setChatList(chatListClone)
+    }
+
+    setAILoading(true)
+  }
 
   return (
     <main className="flex min-h-screen bg-gpt-gray">
@@ -47,7 +107,7 @@ const Page = () => {
           title={`Titulo 123`}
           newChatClick={handleNewChat}
         />
-        <ChatArea chat={chatActive} />
+        <ChatArea chat={chatActive} loading={AILoading} />
 
         <Footer disabled={AILoading} onSendMessage={handleSendMessage} />
       </section>
