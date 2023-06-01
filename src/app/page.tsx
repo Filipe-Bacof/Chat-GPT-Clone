@@ -1,21 +1,22 @@
 'use client'
 
 import { ChatArea } from '@/components/ChatArea'
+import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Sidebar } from '@/components/Sidebar'
 import { Chat } from '@/types/Chat'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Page = () => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
-  const [chatActive, setChatActive] = useState<Chat>({
-    id: '123',
-    title: 'titulo da mensagem',
-    messages: [
-      { id: '99', author: 'me', body: 'opa tudo bem?' },
-      { id: '98', author: 'ai', body: 'Tudo otimo! em que posso lhe ajudar?' },
-    ],
-  })
+  const [chatList, setChatList] = useState<Chat[]>([])
+  const [chatActiveId, setChatActiveId] = useState<string>('')
+  const [chatActive, setChatActive] = useState<Chat>()
+  const [AILoading, setAILoading] = useState(false)
+
+  useEffect(() => {
+    setChatActive(chatList.find((item) => item.id === chatActiveId))
+  }, [chatActiveId, chatList])
 
   const openSidebar = () => {
     setSidebarOpened(true)
@@ -27,6 +28,8 @@ const Page = () => {
   const handleClearConversations = () => {}
 
   const handleNewChat = () => {}
+
+  const handleSendMessage = () => {}
 
   return (
     <main className="flex min-h-screen bg-gpt-gray">
@@ -45,6 +48,8 @@ const Page = () => {
           newChatClick={handleNewChat}
         />
         <ChatArea chat={chatActive} />
+
+        <Footer disabled={AILoading} onSendMessage={handleSendMessage} />
       </section>
     </main>
   )
