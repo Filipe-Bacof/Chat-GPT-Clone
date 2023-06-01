@@ -3,10 +3,19 @@
 import { ChatArea } from '@/components/ChatArea'
 import { Header } from '@/components/Header'
 import { Sidebar } from '@/components/Sidebar'
+import { Chat } from '@/types/Chat'
 import { useState } from 'react'
 
 const Page = () => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
+  const [chatActive, setChatActive] = useState<Chat>({
+    id: '123',
+    title: 'titulo da mensagem',
+    messages: [
+      { id: '99', author: 'me', body: 'opa tudo bem?' },
+      { id: '98', author: 'ai', body: 'Tudo otimo! em que posso lhe ajudar?' },
+    ],
+  })
 
   const openSidebar = () => {
     setSidebarOpened(true)
@@ -35,7 +44,7 @@ const Page = () => {
           title={`Titulo 123`}
           newChatClick={handleNewChat}
         />
-        <ChatArea />
+        <ChatArea chat={chatActive} />
       </section>
     </main>
   )
