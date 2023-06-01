@@ -11,7 +11,7 @@ export const ChatMessageItem = ({ item }: Props) => {
     <div className={`py-5 ${item.author === 'ai' && 'bg-gray-600/50'}`}>
       <div className="m-auto flex max-w-4xl">
         <div
-          className={`mx-4 flex w-10 w-10 items-center justify-center rounded md:ml-0 ${
+          className={`mx-4 flex w-10 items-center justify-center rounded md:ml-0 ${
             item.author === 'ai' ? 'bg-gpt-ai-color' : 'bg-blue-900'
           }`}
         >
