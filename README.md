@@ -1,8 +1,8 @@
 # Clone do Chat GPT
 
-<a href="https://bacof-chat-gpt-clone.vercel.app/" target="_blank"><img align="center" alt="C" height="50" width="50" src="https://freelogopng.com/images/all_img/1681038800chatgpt-logo-black.png" /> Clique aqui para ver o deploy</a>
+<a href="https://bacof-chat-gpt-clone.vercel.app/" target="_blank"><img align="center" alt="Chat GPT icone preto" height="50" width="50" src="https://freelogopng.com/images/all_img/1681038800chatgpt-logo-black.png" /> Clique aqui para ver o deploy</a>
 
-<a href="https://portifolio-filipe-bacof.vercel.app/" target="_blank"><img align="center" alt="C" height="50" width="50" src="https://avatars.githubusercontent.com/u/72168940" /> Clique aqui para ver o meu portifólio</a>
+<a href="https://portifolio-filipe-bacof.vercel.app/" target="_blank"><img align="center" alt="Foto de Perfil do Github Filipe Bacof" height="50" width="50" src="https://avatars.githubusercontent.com/u/72168940" /> Clique aqui para ver o meu portifólio</a>
 
 # Documentações e Links
 
