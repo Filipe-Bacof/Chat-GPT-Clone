@@ -1,36 +1,20 @@
-# Estou atualmente trabalhando neste projeto
+# Clone do Chat GPT
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a href="https://bacof-chat-gpt-clone.vercel.app/" target="_blank"><img align="center" alt="C" height="50" width="50" src="https://freelogopng.com/images/all_img/1681038800chatgpt-logo-black.png" /> Clique aqui para ver o deploy</a>
 
-## Getting Started
+<a href="https://portifolio-filipe-bacof.vercel.app/" target="_blank"><img align="center" alt="C" height="50" width="50" src="https://avatars.githubusercontent.com/u/72168940" /> Clique aqui para ver o meu portifólio</a>
 
-First, run the development server:
+# Documentações e Links
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Para aprender mais sobre NextJS, ou sobre a API do Chat GPT, posso recomendar os seguintes links:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Documentação do NextJS](https://nextjs.org/docs) - Aprenda sobre os recursos e API do NextJS.
+- [Aprenda Next.js](https://nextjs.org/learn) - Um tutorial interativo do Next.js.
+- [Acesse o Chat GPT](https://chat.openai.com/) - Para acessar o Chat Original.
+- [Api do Chat GPT](https://openai.com/blog/openai-api) - Para utilizar os recursos da OpenAI.
+- [Documentação da API do Chat GPT](https://platform.openai.com/docs/introduction) - Para visualizar a documentação e os recursos disponibilizados pela OpenAI.
+- [Documentação de deploy com NextJS](https://nextjs.org/docs/deployment) - A maneira mais fácil de fazer deploy de um projeto NextJS.
+- [B7Web](https://b7web.com.br/) - Idéia original e tributo.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- https://www.youtube.com/watch?v=roonV_siL94 -->
+<!-- https://www.youtube.com/watch?v=vLHXw_dPuZU -->
