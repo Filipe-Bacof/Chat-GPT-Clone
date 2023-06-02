@@ -11,7 +11,7 @@ export const Footer = ({ disabled, onSendMessage }: Props) => {
       <div className="m-auto max-w-4xl">
         <ChatMessageInput disabled={disabled} onSend={onSendMessage} />
         <div className="pt-3 text-center text-xs text-gray-300">
-          Feito por Filipe Bacof - Veja o meu portifólio:
+          Feito por Filipe Bacof - Veja o meu portifólio:&nbsp;
           <a
             className="underline"
             target="_blank"
@@ -20,6 +20,10 @@ export const Footer = ({ disabled, onSendMessage }: Props) => {
           >
             Acesse aqui!
           </a>
+        </div>
+        <div className="pt-1 text-center text-xs text-gray-300">
+          Validade da minha chave API = 01/07/2023 (após esta data o projeto
+          pode parar de funcionar)
         </div>
       </div>
     </footer>

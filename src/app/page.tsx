@@ -6,6 +6,7 @@ import { Header } from '@/components/Header'
 import { Sidebar } from '@/components/Sidebar'
 import { SidebarChatButton } from '@/components/SidebarChatButton'
 import { Chat } from '@/types/Chat'
+import { openai } from '@/utils/openai'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -21,7 +22,9 @@ const Page = () => {
   }, [chatActiveId, chatList])
 
   useEffect(() => {
-    if (AILoading) getAIResponse()
+    if (AILoading) {
+      getAIResponse()
+    }
   }, [AILoading])
 
   const openSidebar = () => {
@@ -31,23 +34,27 @@ const Page = () => {
     setSidebarOpened(false)
   }
 
-  const getAIResponse = () => {
-    // requisição para a API do CHAT GPT
-    setTimeout(() => {
-      const chatListClone = [...chatList]
-      const chatIndex = chatListClone.findIndex(
-        (item) => item.id === chatActiveId,
+  const getAIResponse = async () => {
+    const chatListClone = [...chatList]
+    const chatIndex = chatListClone.findIndex(
+      (item) => item.id === chatActiveId,
+    )
+    if (chatIndex > -1) {
+      const tranlated = openai.translateMessages(
+        chatListClone[chatIndex].messages,
       )
-      if (chatIndex > -1) {
+      const response = await openai.generate(tranlated)
+
+      if (response) {
         chatListClone[chatIndex].messages.push({
           id: uuidv4(),
           author: 'ai',
-          body: 'resposta da API do CHAT GPT',
+          body: response,
         })
       }
-      setChatList(chatListClone)
-      setAILoading(false)
-    }, 2000)
+    }
+    setChatList(chatListClone)
+    setAILoading(false)
   }
 
   const handleClearConversations = () => {
