@@ -30,7 +30,7 @@ export const Sidebar = ({
           open ? 'ml-0' : '-ml-96'
         } md:ml-0`}
       >
-        <div className="flex w-64 flex-col bg-gray-900 p-2">
+        <div className="flex w-64 flex-col bg-[#202123] p-2">
           <div
             onClick={onNewChat}
             className="flex cursor-pointer items-center rounded-md border border-white/20 p-3 text-sm hover:bg-gray-500/20"

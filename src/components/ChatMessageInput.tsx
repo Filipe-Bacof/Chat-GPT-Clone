@@ -40,7 +40,7 @@ export const ChatMessageInput = ({ disabled, onSend }: Props) => {
     >
       <textarea
         ref={textEl}
-        className="h-7 max-h-48 flex-1 resize-none overflow-y-auto border-0 bg-transparent outline-none"
+        className="my-2 ml-2 h-7 max-h-48 flex-1 resize-none overflow-y-auto border-0 bg-transparent outline-none"
         placeholder="Digite uma mensagem"
         value={text}
         onChange={(e) => setText(e.target.value)}
@@ -50,7 +50,7 @@ export const ChatMessageInput = ({ disabled, onSend }: Props) => {
 
       <div
         onClick={handleSendMessage}
-        className={`cursor-pointer self-end rounded p-1 ${
+        className={`cursor-pointer self-end rounded p-3 ${
           text.length ? 'opacity-100 hover:bg-black/20' : 'opacity-20'
         }`}
       >

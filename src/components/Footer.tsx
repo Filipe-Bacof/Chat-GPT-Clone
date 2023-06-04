@@ -21,7 +21,7 @@ export const Footer = ({ disabled, onSendMessage }: Props) => {
             Acesse aqui!
           </a>
         </div>
-        <div className="pt-1 text-center text-xs text-gray-300">
+        <div className="cursor-default pt-1 text-center text-xs text-gray-300">
           Validade da minha chave API = 01/07/2023 (após esta data o projeto
           pode parar de funcionar)
         </div>
